@@ -118,3 +118,55 @@ function getMinNumberFromArr(ArrId) {
   console.log("minNumber ===", minNumber);
 }
 // getMinNumberFromArr(numbersArray);
+
+// 3 uzduotis
+
+const mixedArray = [
+  "banana",
+  "giraffe",
+  "pizza",
+  true,
+  42,
+  false,
+  "unicorn",
+  7,
+  "laughter",
+  true,
+  "and",
+  3.14,
+];
+
+// 3.1 Atrinkti i nauja masyva tik string tipo reiksmes
+const onlyStringObjArr = mixedArray.filter((obj) => typeof obj === "string");
+console.log("onlyStringObjArr ===", onlyStringObjArr);
+
+// 3.1.1 is gauto masyvo suzinoti ar yra zodis trumpesnis nei 4 raides
+function isItLongerThan4(ArrId) {
+  const isItLonger = ArrId.find((element) => element.length > 4);
+  isItLonger ? console.log("radau") : console.log("neradau");
+}
+// 3.1.2
+function howManyLongerThan5(ArrId) {
+  const isItLonger = ArrId.filter((text) => text.length > 5);
+  console.log(isItLonger.length);
+}
+// 3.2 Parasyti funkcija kuri atrenka is masyvo skaicius ir grazina ju suma.
+function getNumbersSumArr(ArrId) {
+  const onlyNumbers = ArrId.filter((obj) => typeof obj === "number");
+  const sum = onlyNumbers.reduce((a, v) => a + v);
+  console.log("sum ===", sum);
+}
+// 3.3 Suzinoti ir atspausdinti ar masyve yra neigiamu reiksmiu?
+function areThereNegatives(ArrId) {
+  const onlyNumbers = ArrId.filter((obj) => typeof obj === "number");
+  const isThereNegative = onlyNumbers.find((number) => number < 0);
+  isThereNegative ? console.log("radau") : console.log("neradau");
+}
+// 3.4 parasyti koda kuris is sio masyvo sukurtu/grazintu kintamaji objekta kuris pasako kiek true ir kiek false reiksmiu yra siame masyve. pvz {taip: 2, ne: 2}
+function filterBoolean(ArrId) {
+  const booleanArr = ArrId.filter((obj) => typeof obj === "boolean");
+  const positives = booleanArr.filter((obj) => obj === true);
+  const negatives = booleanArr.filter((obj) => obj === false);
+  console.log(`taip: ${positives.length}, ne: ${negatives.length}`);
+}
+filterBoolean(mixedArray);
