@@ -87,6 +87,11 @@ function getAllElements(ArrId) {
 // getAllElements(numbersArray);
 
 // 2.15 Sukurti funkciją, kuri ima masyvą ir grąžina visų jo elementų sumą
+/**
+ *
+ * @param {number[]} ArrId
+ * @returns
+ */
 function getElSum(ArrId) {
   const sum = ArrId.reduce((a, v) => a + v);
   console.log("sum ===", sum);
